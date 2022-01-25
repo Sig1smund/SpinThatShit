@@ -8,27 +8,23 @@ const spinner = new Spinner({
 const inputForm = document.querySelector(".form");
 const list = document.querySelectorAll(".spinners");
 const stopBtn = document.querySelector(".spinner__stop");
+const sample = document.querySelector(".spinner");
 
 inputForm.addEventListener("submit", onFormSubmit);
 stopBtn.addEventListener("click", onStopSpin);
-
-function bounceMarkup() {
-  return `<span class="bounce__circle"></span>
-      <span class="bounce__circle"></span>
-      <span class="bounce__circle"></span>`;
-}
 
 function createBounceMarkup() {
   const markup = `<span class="bounce__circle"></span>
       <span class="bounce__circle"></span>
       <span class="bounce__circle"></span>`;
-  return spinner.insertAjacentHTML("beforeend", markup);
+  sample.insertAdjacentHTML("beforeend", markup);
 }
 
 function onFormSubmit(event) {
   event.preventDefault();
+  console.log(event.target.elements.spinner.value);
 
-  if (inputForm.value === "Bounce") {
+  if (event.target.elements.spinner.value === "bounce") {
     createBounceMarkup();
     spinner.show();
   }
@@ -36,4 +32,5 @@ function onFormSubmit(event) {
 
 function onStopSpin() {
   spinner.hide();
+  sample.innerHTML = "";
 }

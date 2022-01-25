@@ -12,21 +12,25 @@
   <body>
     <header class="header">
       <form class="form">
-        <label for="spinners">Choose that shit</label>
-        <select name="spinners" id="spinners">
-          <option value="bounce">Bounce</option>
-          <option value="round">Round</option>
-        </select>
+        <p>Choose a spinner:</p>
+        <label>
+          <input type="radio" name="spinner" value="bounce" />
+          Bounce
+        </label>
+        <label>
+          <input type="radio" name="spinner" value="round" />
+          Round
+        </label>
+        <label>
+          <input type="radio" name="spinner" value="spin" />
+          Spin
+        </label>
         <button type="submit" class="spinner__start">Spin!</button>
+        <button type="button" class="spinner__stop">Stop That Shit</button>
       </form>
-      <button type="button" class="spinner__stop">Stop That Spin</button>
     </header>
     <main></main>
-    <div class="spinner">
-      <!-- <span class="bounce__circle"></span>
-      <span class="bounce__circle"></span>
-      <span class="bounce__circle"></span> -->
-    </div>
+    <div class="spinner"></div>
     <script src="./index.js" type="module"></script>
   </body>
 </html>
