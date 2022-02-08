@@ -7,6 +7,7 @@ const spinner = new Spinner({
 
 const inputForm = document.querySelector(".form");
 const list = document.querySelectorAll(".spinners");
+const spinButton = document.querySelector(".spinner__start");
 const stopBtn = document.querySelector(".spinner__stop");
 const sample = document.querySelector(".spinner");
 
@@ -27,10 +28,12 @@ function onFormSubmit(event) {
   if (event.target.elements.spinner.value === "bounce") {
     createBounceMarkup();
     spinner.show();
+    spinButton.disabled = true;
   }
 }
 
 function onStopSpin() {
   spinner.hide();
   sample.innerHTML = "";
+  spinButton.disabled = false;
 }
